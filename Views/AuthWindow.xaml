@@ -44,7 +44,7 @@
                 <lofi:PixelateEffect Intensity="0.18"/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBox Background="{x:Null}" FontSize="25" VerticalAlignment="Center" Grid.Row="2" Text="Введите логин" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" BorderBrush="#B6FF00" >
+        <TextBox x:Name="LoginBox" Background="{x:Null}" FontSize="25" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" BorderBrush="#B6FF00" >
             <TextBox.Effect>
                 <lofi:PixelateEffect Intensity="0.02"/>
             </TextBox.Effect>
@@ -54,11 +54,11 @@
                 <lofi:PixelateEffect Intensity="0.1"/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBox Background="{x:Null}" Grid.Row="3" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" FontSize="25" Text="Введите пароль" BorderBrush="#B6FF00" >
-            <TextBox.Effect>
+        <PasswordBox x:Name="PasswordBox" Background="{x:Null}" Grid.Row="3" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" FontSize="25" BorderBrush="#B6FF00" >
+            <PasswordBox.Effect>
                 <lofi:PixelateEffect Intensity="0.02"/>
-            </TextBox.Effect>
-        </TextBox>
+            </PasswordBox.Effect>
+        </PasswordBox>
 
         <Button Grid.Row="4" Grid.Column="2" Height="95" Margin="10" Content="Войти" FontSize="24" Background="#B6FF00" Click="Login_Click" BorderBrush="Black">
             <Button.Effect>
@@ -71,5 +71,10 @@
                 <lofi:PixelateEffect Intensity="0.07"/>
             </Button.Effect>
         </Button>
+        <TextBlock x:Name="PassNotes" Background="{x:Null}" FontSize="25" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#FFFF0013"  >
+            <TextBlock.Effect>
+                <lofi:PixelateEffect Intensity="0.02"/>
+            </TextBlock.Effect>
+        </TextBlock>
     </Grid>
 </Window>

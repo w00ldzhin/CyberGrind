@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using igraUP.Service;
 
 namespace igraUP
 {
@@ -29,13 +30,19 @@ namespace igraUP
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-          
+            AuthService.Login(LoginBox.Text, PasswordBox.Password);
 
 
         }
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-
+        
+            AuthService.Register(LoginBox.Text, PasswordBox.Password, out string error);
+            if (error != null)
+            {
+                PassNotes.Text = error;
+            }
+            
         }
     }
 }
