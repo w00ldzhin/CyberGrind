@@ -1,38 +1,60 @@
 ﻿using igraUP.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Documents;
 
 namespace igraUP.Service
 {
-    class SaveService
+    static class SaveService
     {
-        string savepath = "/Data/Users.cs";
+        private const string savepath = "Data/users.json";
 
-        public void LoadUser() 
+
+        public static List<User> LoadUsers() 
         {
-            List<string> list = new List<string>();
-
-            if (File.Exists(savepath)) 
+            try
             {
-            //  var x = File.ReadAllText(savepath);
-               User user = JsonSerializer.Deserialize<User>(savepath);
+                List<User>? users = new List<User>();
 
+                if (File.Exists(savepath))
+                {
+                    var x = File.ReadAllText(savepath);
+                    users = JsonSerializer.Deserialize<List<User>>(x) ?? new List<User>();
+                    
+                }
+              
+
+                return users;
             }
-            else
+            catch
             {
-                File.CreateText(savepath);
+                return new List<User>();
             }
-
-           
         }
 
-        public void SaveUser() 
+        public  static bool SaveUsers(List<User> users) 
         {
-            
+            try
+            {
+                if (!Directory.Exists("Data"))
+                {
+                    Directory.CreateDirectory("Data");
+
+                }
+                var x = JsonSerializer.Serialize(users);
+                    File.WriteAllText(savepath, x);
+                return true;
+            }
+            catch
+           {
+                return false;
+                
+            }
         }
     }
 }
