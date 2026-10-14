@@ -1,6 +1,9 @@
-﻿using System;
+﻿using igraUP.Data;
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,6 +23,19 @@ namespace igraUP
         public AuthWindow()
         {
             InitializeComponent();
+
+        }
+       
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+          
+
+
+        }
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
