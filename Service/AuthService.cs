@@ -5,12 +5,14 @@ using igraUP.Data;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
+using System.Windows.Documents;
+using System.Windows;
 
 namespace igraUP.Service
 {
     public  static class AuthService
     {
-       public static bool Register(string login, string password, out string error)
+       public static bool Register(string login, string password, out string regerror)
         {
             try
             {
@@ -27,49 +29,88 @@ namespace igraUP.Service
 
                 List<User> users = SaveService.LoadUsers();
 
-           
-                if (users.Any(u => u.login == login))
+
+
+                if (login == string.Empty)
                 {
-                    error = "Пользователь с таким логином уже существует";
+                    regerror = "Введите логин";
                     return false;
                 }
 
-                if (login == null)
+                else if (password.Length < 3)
                 {
-                    error = "Введите логин";
+                    regerror = "Пароль не должен быть короче 3 символов";
+                    return false;
+                }
+                else if (users.Any(u => u.login == login))
+                {
+                    regerror = "Пользователь с таким логином уже существует";
                     return false;
                 }
 
-                if (password.Length < 3)
-                {
-                    error = "Пароль не должен быть короче 3 символов";
-                    return false;
-                }
+               
                 else
                 {
                     users.Add(user);
 
                     SaveService.SaveUsers(users);
 
-                    error = "";
+                    regerror = string.Empty;
                     return true;
                 }
+
             }
             catch
             {
-                 error = "Ошибка с регистрацией";
+                regerror = "Ошибка с регистрацией";
                 return false;
             } 
         }
 
-        public static bool Login(string login, string password)
+        public static bool Login(string login, string password, out string loginerror)
         {
             try
             {
-                return true;
+                var x = Encoding.UTF8;
+                byte[] hash = x.GetBytes(password);
+                string passwordhash;
+                using (SHA256 sHA256 = SHA256.Create())
+                {
+                    passwordhash = Convert.ToHexString(sHA256.ComputeHash(hash));
+
+                }
+
+                List<User> users = SaveService.LoadUsers();
+
+
+                if (login == string.Empty)
+                {
+                    loginerror = "Введите логин";
+                    return false;
+                }
+                else if (password == string.Empty)
+                {
+                    loginerror = "Введите пароль";
+                    return false;
+                }
+
+                else if (users.Any(u => u.login == login && u.passwordhash == passwordhash))
+                {
+                    loginerror = string.Empty;
+                    return true;
+                   
+                }
+               
+                else
+                {
+                    loginerror = "Неправильный логин или пароль";
+                    return false;   
+                }
+               
             }
             catch 
             {
+                loginerror = "Ошибка при входе в систему";
                 return false;
             }
         }

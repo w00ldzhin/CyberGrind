@@ -30,17 +30,26 @@ namespace igraUP
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            AuthService.Login(LoginBox.Text, PasswordBox.Password);
-
+            AuthService.Login(LoginBox.Text, PasswordBox.Password, out string loginerror);
+            if (loginerror != string.Empty)
+            {
+                PassNotes.Text = loginerror;
+            }
+            else
+            {
+                 MainWindow mainWindow = new MainWindow();
+                  mainWindow.Show();
+                    this.Close();
+            }
 
         }
         private void Register_Click(object sender, RoutedEventArgs e)
         {
         
-            AuthService.Register(LoginBox.Text, PasswordBox.Password, out string error);
-            if (error != null)
+            AuthService.Register(LoginBox.Text, PasswordBox.Password, out string regerror);
+            if (regerror != string.Empty)
             {
-                PassNotes.Text = error;
+                PassNotes.Text = regerror;
             }
             
         }
