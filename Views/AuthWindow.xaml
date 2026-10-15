@@ -7,11 +7,17 @@
  xmlns:lofi="clr-namespace:LoFiEffects.WPF.Effects;assembly=LoFiEffects.WPF"
         xmlns:local="clr-namespace:igraUP"
         mc:Ignorable="d"
-        Title="Вход и регистрация" Width="1920" Height="1080" WindowState="Maximized" FontFamily="Tektur" >
+        Title="Вход и регистрация" Width="2560" Height="1440" WindowState="Maximized" FontFamily="Tektur" Background="#A8D900">
 
 
     <Grid >
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -26,55 +32,50 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Rectangle Fill="#FF00D9D9" Stroke="#FFA8D900" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="8">
+            
+        </Rectangle>
+        <Rectangle Fill="#D900C7" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="80, 10, 10, 50">
 
-        <Image gif:ImageBehavior.AnimatedSource="/Images/BackgroundAuth/video_0b9ac5c0498a.gif" 
-               Stretch="UniformToFill"
-               RenderOptions.BitmapScalingMode="HighQuality"  Grid.RowSpan="6" Grid.ColumnSpan="6" />
-        <Rectangle Fill="#80000000" Grid.RowSpan="6" Grid.ColumnSpan="6"/>
-        <!-- FF58DF00-->
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="6"  Text="CyberGrind" TextWrapping="Wrap" FontFamily="Cyberpunk" FontSize="150" Foreground="#B6FF00">
-            <TextBlock.Effect>
-                <lofi:PixelateEffect Intensity="0.07"/>
-            </TextBlock.Effect>
+        </Rectangle>
+
+        <TextBlock Text="Вход в аккаунт" Foreground="#FF00D9D9" FontFamily="Cyberpunk" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="90, 15, 30, 65" FontSize="35">
+            
         </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Login:" TextWrapping="Wrap" FontFamily="Cyberpunk" FontSize="30"  Foreground="#B6FF00">
-            <TextBlock.Effect>
-                <lofi:PixelateEffect Intensity="0.18"/>
-            </TextBlock.Effect>
+
+        <TextBlock Text="ENTER THE VOID" Foreground="#D900C7" FontFamily="Cyberpunk" Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="42,87,0,0" FontSize="60" HorizontalAlignment="Center">
+
         </TextBlock>
-        <TextBox x:Name="LoginBox" Background="{x:Null}" FontSize="25" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" BorderBrush="#B6FF00" >
-            <TextBox.Effect>
-                <lofi:PixelateEffect Intensity="0.02"/>
-            </TextBox.Effect>
+        <TextBlock Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Логин:"  FontFamily="Press Start 2P" FontSize="36"  Foreground="#000000" Margin="77,90,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
+          
+        </TextBlock>
+        <TextBox x:Name="LoginBox" Background="#F5F0C8"  Grid.Row="4" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="4" Height="65" Foreground="#000000" Margin="77,130,70,0" FontFamily="Press Start 2P">
+           
         </TextBox>
-        <TextBlock Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Password:" TextWrapping="Wrap" FontFamily="Cyberpunk" FontSize="30" Foreground="#B6FF00">
-            <TextBlock.Effect>
-                <lofi:PixelateEffect Intensity="0.1"/>
-            </TextBlock.Effect>
+        <TextBlock Grid.Row="5"  Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2" Text="Пароль:"  FontFamily="Press Start 2P" FontSize="36" Foreground="#000000" Margin="77,120,0,0">
+         
         </TextBlock>
-        <PasswordBox x:Name="PasswordBox" Background="{x:Null}" Grid.Row="3" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#B6FF00" FontSize="25" BorderBrush="#B6FF00" >
-            <PasswordBox.Effect>
-                <lofi:PixelateEffect Intensity="0.02"/>
-            </PasswordBox.Effect>
+        <PasswordBox x:Name="PasswordBox" Background="#F5F0C8" Grid.Row="5"  Grid.RowSpan="3"  Grid.Column="4" Grid.ColumnSpan="4" Height="65" Foreground="#000000" FontFamily="Press Start 2P" Margin="77,75,70,0" >
+            
         </PasswordBox>
 
         <Button Grid.Row="4" Grid.Column="2" Height="95" Margin="10" Content="Войти" FontSize="24" Background="#B6FF00" Click="Login_Click" BorderBrush="Black">
-            <Button.Effect>
-                <lofi:PixelateEffect Intensity="0.07 "/>
-            </Button.Effect>
+          
         </Button>
 
         <Button Grid.Row="4" Grid.Column="3" Height="95" Margin="10"  Click="Register_Click" Content="Зарегестрироваться" FontSize="24" Background="{x:Null}" BorderBrush="#B6FF00" Foreground="#B6FF00">
-            <Button.Effect>
-                <lofi:PixelateEffect Intensity="0.07"/>
-            </Button.Effect>
+           
         </Button>
         <TextBlock x:Name="PassNotes" Background="{x:Null}" FontSize="25" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#FFFF0013"  >
-            <TextBlock.Effect>
-                <lofi:PixelateEffect Intensity="0.02"/>
-            </TextBlock.Effect>
+         
         </TextBlock>
     </Grid>
 </Window>

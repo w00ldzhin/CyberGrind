@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:igraUP"
              StartupUri="/Views/AuthWindow.xaml">
     <Application.Resources>
-        <FontFamily x:Key="TekturFont">/Images/Font/Tektur/#Tektur</FontFamily>
+        <FontFamily x:Key="PressStart2PFont">/Images/Font/PressStart2P/#PressStart2P</FontFamily>
         <FontFamily x:Key="CyberpunkFont">/Images/Font/Cyberpunk/#Cyberpunk</FontFamily>
     </Application.Resources>
 </Application>
