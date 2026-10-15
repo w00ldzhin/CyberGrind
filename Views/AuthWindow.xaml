@@ -7,75 +7,158 @@
  xmlns:lofi="clr-namespace:LoFiEffects.WPF.Effects;assembly=LoFiEffects.WPF"
         xmlns:local="clr-namespace:igraUP"
         mc:Ignorable="d"
-        Title="Вход и регистрация" Width="2560" Height="1440" WindowState="Maximized" FontFamily="Tektur" Background="#A8D900">
+        Title="Вход и регистрация" Width="1280"
+Height="720"
+MinWidth="1280"
+MinHeight="720"
+WindowStartupLocation="CenterScreen" Background="#A8D900">
 
-
-    <Grid >
+    <Grid>
+        <Grid>
+        <Rectangle>
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile"
+                         Viewport="-65,0,200,50"
+                         ViewportUnits="Absolute"
+                         Stretch="None">
+                    <VisualBrush.Visual>
+                        <StackPanel>
+                                <TextBlock x:Name="background1" Text="ERROR?"
+                                   FontFamily="Cyberpunk"
+                                   HorizontalAlignment="Left"
+                                   FontSize="20">
+                                <TextBlock.Effect>
+                                    <lofi:NoiseEffect Density="1" Intensity="0.5"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                                <TextBlock x:Name="background2" Text="I DONT CARE."
+                                   FontFamily="Cyberpunk"
+                                   HorizontalAlignment="Left"
+                                   FontSize="19">
+                                <TextBlock.Effect>
+                                        <lofi:NoiseEffect Density="1" Intensity="0.5"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </StackPanel>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+    
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Rectangle Fill="#FF00D9D9" Stroke="#FFA8D900" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="8">
             
-        </Rectangle>
-        <Rectangle Fill="#D900C7" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="80, 10, 10, 50">
 
-        </Rectangle>
+            <TextBlock Grid.Row="0" Grid.Column="1"
+                   Text="VOID//RUN"
+                   FontFamily="Cyberpunk"
+                   FontSize="20"
+                   Foreground="#000000"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   />
 
-        <TextBlock Text="Вход в аккаунт" Foreground="#FF00D9D9" FontFamily="Cyberpunk" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Margin="90, 15, 30, 65" FontSize="35">
-            
-        </TextBlock>
+            <Border Grid.Row="1" Grid.Column="1"
+                Background="#00D9D9"
+                BorderBrush="#A8D900"
+                BorderThickness="3"
+                Padding="40"
+                MaxWidth="600"
+                VerticalAlignment="Center">
 
-        <TextBlock Text="ENTER THE VOID" Foreground="#D900C7" FontFamily="Cyberpunk" Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="42,87,0,0" FontSize="60" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical">
 
-        </TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Логин:"  FontFamily="Press Start 2P" FontSize="36"  Foreground="#000000" Margin="77,90,0,0" Grid.ColumnSpan="2" Grid.RowSpan="2">
-          
-        </TextBlock>
-        <TextBox x:Name="LoginBox" Background="#F5F0C8"  Grid.Row="4" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="4" Height="65" Foreground="#000000" Margin="77,130,70,0" FontFamily="Press Start 2P">
-           
-        </TextBox>
-        <TextBlock Grid.Row="5"  Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2" Text="Пароль:"  FontFamily="Press Start 2P" FontSize="36" Foreground="#000000" Margin="77,120,0,0">
-         
-        </TextBlock>
-        <PasswordBox x:Name="PasswordBox" Background="#F5F0C8" Grid.Row="5"  Grid.RowSpan="3"  Grid.Column="4" Grid.ColumnSpan="4" Height="65" Foreground="#000000" FontFamily="Press Start 2P" Margin="77,75,70,0" >
-            
-        </PasswordBox>
+                    <Border Background="#D900C7"
+                        Padding="10,4"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,15">
+                        <TextBlock Text="Вход в аккаунт"
+                               FontFamily="Cyberpunk"
+                               FontSize="18"
+                               Foreground="#00D9D9"/>
+                    </Border>
 
-        <Button Grid.Row="4" Grid.Column="2" Height="95" Margin="10" Content="Войти" FontSize="24" Background="#B6FF00" Click="Login_Click" BorderBrush="Black">
-          
-        </Button>
+                    <TextBlock Text="ENTER THE VOID"
+                           FontFamily="Cyberpunk"
+                           FontSize="40"
+                           Foreground="#D900C7"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,30"/>
 
-        <Button Grid.Row="4" Grid.Column="3" Height="95" Margin="10"  Click="Register_Click" Content="Зарегестрироваться" FontSize="24" Background="{x:Null}" BorderBrush="#B6FF00" Foreground="#B6FF00">
-           
-        </Button>
-        <TextBlock x:Name="PassNotes" Background="{x:Null}" FontSize="25" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Height="35" Foreground="#FFFF0013"  >
-         
-        </TextBlock>
+                    <TextBlock Text="Логин"
+                           FontFamily="Press Start 2P"
+                           FontSize="16"
+                           Foreground="#000000"
+                           Margin="0,0,0,15"/>
+
+                    <TextBox x:Name="LoginBox"
+                         Background="#F5F0C8"
+                         Foreground="#000000"
+                         FontFamily="Press Start 2P"
+                         FontSize="16"
+                         Padding="10"
+                         MinHeight="45"
+                         BorderThickness="0"
+                         Margin="0,0,0,18"/>
+
+                    <TextBlock Text="Пароль"
+                           FontFamily="Press Start 2P"
+                           FontSize="16"
+                           Foreground="#000000"
+                           Margin="0,0,0,15"/>
+
+                    <PasswordBox x:Name="PasswordBox"
+                             Background="#F5F0C8"
+                             Foreground="#000000"
+                             FontFamily="Press Start 2P"
+                             FontSize="16"
+                             Padding="10"
+                             MinHeight="45"
+                             BorderThickness="0"
+                             Margin="0,0,0,25"/>
+
+                    <TextBlock x:Name="PassNotes"
+                           FontFamily="Press Start 2P"
+                           FontSize="16"
+                           Foreground="#FF0013"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,15"/>
+
+                    <Button Content="ВОЙТИ"
+                        FontFamily="Cyberpunk"
+                        FontSize="18"
+                        Background="#9B00FF"
+                        Foreground="#000000"
+                        Padding="30,10"
+                        HorizontalAlignment="Center"
+                        MinWidth="200"
+                        Margin="0,0,0,10"
+                        Click="Login_Click"/>
+
+                    <Button Content="ЗАРЕГИСТРИРОВАТЬСЯ"
+                        FontFamily="Cyberpunk"
+                        FontSize="18"
+                        Background="#9B00FF"
+                        Foreground="#000000"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        MinWidth="200"
+                        Click="Register_Click"/>
+
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

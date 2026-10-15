@@ -9,58 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Fonts\Tektur\Tektur-Black.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-Bold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-ExtraBold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-Medium.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-Regular.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-SemiBold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur-VariableFont_wdth,wght.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-Black.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-Bold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-ExtraBold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-Medium.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-Regular.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_Condensed-SemiBold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-Black.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-Bold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-ExtraBold.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-Medium.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-Regular.ttf" />
-    <None Remove="Images\Fonts\Tektur\Tektur_SemiCondensed-SemiBold.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Images\BackgroundAuth\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Akto.GTLib" Version="1.0.2" />
     <PackageReference Include="LoFiEffects.WPF" Version="10.0.0" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\Fonts\Tektur\Tektur-Black.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-Bold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-ExtraBold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-Medium.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-Regular.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-SemiBold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur-VariableFont_wdth,wght.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-Black.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-Bold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-ExtraBold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-Medium.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-Regular.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_Condensed-SemiBold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-Black.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-Bold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-ExtraBold.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-Medium.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-Regular.ttf" />
-    <Resource Include="Images\Fonts\Tektur\Tektur_SemiCondensed-SemiBold.ttf" />
   </ItemGroup>
 
 </Project>
