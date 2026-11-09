@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:igraUP.Views"
         mc:Ignorable="d"
-        Title="GameWinndow" Height="450" Width="800">
+        Title="GameWinndow" WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Cursor="None">
     <Grid>
-        
+  
+        <Image x:Name="GameImage" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+        <Image x:Name="MuzzleFlashImage" 
+       Visibility="Collapsed" 
+       HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+       Width="250" Margin="0,0,400,370" 
+       RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+        <Image x:Name="WeaponImage" 
+       HorizontalAlignment="Right" 
+       VerticalAlignment="Bottom" 
+       Width="1000" 
+Margin="0,0,0,0"
+       RenderOptions.BitmapScalingMode="NearestNeighbor">
+
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="WeaponTransform" />
+            </Image.RenderTransform>
+
+            <Image.Source>
+                <BitmapImage UriSource="pack://application:,,,/Images/Textures/handgun3.png"/>
+            </Image.Source>
+        </Image>
+
+        <Grid x:Name="LeftHandContainer" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="650" Height="650" Margin="0,0,0,0" IsHitTestVisible="False">
+
+            <Grid.RenderTransform>
+                
+                <TransformGroup>
+                    <RotateTransform x:Name="HandRotate" CenterX="325" CenterY="650"/>
+                    <TranslateTransform x:Name="HandTranslate"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <Image x:Name="HandBaseImage" Source="/Images/Textures/LeftHand/handleft.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+
+            <Image x:Name="SyringeLiquidImage" Source="/Images/Textures/LeftHand/liquid.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Image.Clip>
+                    <RectangleGeometry x:Name="LiquidClip" Rect="0,650,650,0"/>
+                </Image.Clip>
+            </Image>
+
+            <Image Source="/Images/Textures/LeftHand/syringe_glass.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+
+            <Image x:Name="Crack1" Source="/Images/Textures/LeftHand/crack_1.png" Visibility="Collapsed" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+            <Image x:Name="Crack2" Source="/Images/Textures/LeftHand/crack_2.png" Visibility="Collapsed" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+            <Image x:Name="Crack3" Source="/Images/Textures/LeftHand/crack_3.png" Visibility="Collapsed" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+            
+        </Grid>
+        <Rectangle x:Name="DamageOverlay" Fill="Red" Opacity="0" IsHitTestVisible="False" />
+        <Rectangle x:Name="ShootFlash" Fill="White" Opacity="0" IsHitTestVisible="False" />
+   
     </Grid>
+ 
+   
 </Window>

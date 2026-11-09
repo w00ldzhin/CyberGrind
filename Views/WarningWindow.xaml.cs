@@ -16,12 +16,9 @@ using System.Windows.Threading;
 
 namespace igraUP.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для WarningWindow.xaml
-    /// </summary>
     public partial class WarningWindow : Window
     {
-        private const int TotalSeconds = 30;
+        private const int TotalSeconds = 10;
         private int secondsLeft = TotalSeconds;
         private readonly DispatcherTimer timer;
         public WarningWindow()
@@ -48,8 +45,8 @@ namespace igraUP.Views
             if (secondsLeft <= 0)
             {
                 timer.Stop();
-                AuthWindow authWindow = new AuthWindow();
-                authWindow.Show();
+                LoadingWindow loading = new LoadingWindow(null);
+                loading.Show();
                 this.Close();
             }
         }

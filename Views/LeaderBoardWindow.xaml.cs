@@ -1,25 +1,47 @@
-﻿using System;
+﻿using igraUP.Models;
+using igraUP.Service;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace igraUP.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для LeaderBoardWindow.xaml
-    /// </summary>
     public partial class LeaderBoardWindow : Window
     {
-        public LeaderBoardWindow()
+        private User _currentUser;
+
+        public LeaderBoardWindow(User user)
         {
             InitializeComponent();
+            _currentUser = user;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            var scores = SaveService.LoadScores();
+
+            var displayScores = scores
+                .GroupBy(s => s.Username)
+                .Select(g => g.OrderByDescending(s => s.Points).First())
+                .OrderByDescending(s => s.Points)
+                .Select((s, index) => new
+                {
+                    Rank = index + 1,
+                    Username = s.Username,
+                    Points = s.Points,
+                    Time = s.Time
+                })
+                .ToList();
+
+            LstScores.ItemsSource = displayScores;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var menu = new MainWindow(_currentUser);
+            menu.Show();
+            this.Close();
         }
     }
 }

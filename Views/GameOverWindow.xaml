@@ -1,0 +1,77 @@
+﻿<Window x:Class="igraUP.Views.GameOverWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:igraUP.Views"
+        mc:Ignorable="d"
+            Title="Game Over" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Background="#8B0000" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock Text="VOID//RUN" FontFamily="Cyberpunk" Foreground="#E8FF00" FontSize="20" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0">
+            <StackPanel>
+                <TextBlock Text="Goodbye," FontFamily="Cyberpunk" FontSize="80" Foreground="#FF4D4D" Opacity="0.3"/>
+                <TextBlock Text="AND" FontFamily="Cyberpunk" FontSize="100" Foreground="#FF4D4D" Opacity="0.3" Margin="0,-20,0,0"/>
+                <TextBlock Text="NEVER" FontFamily="Cyberpunk" FontSize="100" Foreground="#FF4D4D" Opacity="0.3" Margin="0,-20,0,0"/>
+                <TextBlock Text="STOP" FontFamily="Cyberpunk" FontSize="100" Foreground="#FF4D4D" Opacity="0.3" Margin="0,-20,0,0"/>
+                <TextBlock Text="FIGHTING" FontFamily="Cyberpunk" FontSize="100" Foreground="#FF4D4D" Opacity="0.3" Margin="0,-20,0,0"/>
+            </StackPanel>
+
+            <TextBlock Text="RUN OVER" FontFamily="Cyberpunk" FontSize="140" Foreground="#FFFFFF" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Margin="0,-35,0,0" Opacity="0.9"/>
+
+            <TextBlock Text="REAPERS FINNALLY CALLING MY NAME" FontFamily="Cyberpunk" FontSize="20" Foreground="#FFFFFF" 
+                       VerticalAlignment="Bottom" Margin="0,50,0,40"/>
+        </Grid>
+
+        <Border HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-60,80,0" 
+                Background="#0A0A0A" BorderBrush="#00FFFF" BorderThickness="2" Padding="40" Width="550">
+            <StackPanel>
+                <Border Background="#B6FF00" Padding="15,5" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBlock Text="РЕЗУЛЬТАТ" FontFamily="Cyberpunk" Foreground="Black" FontSize="18"/>
+                </Border>
+
+                <TextBlock Text="ИТОГОВЫЕ ОЧКИ" FontFamily="Press Start 2P" Foreground="#AAAAAA" FontSize="20"/>
+                <TextBlock x:Name="TxtScore" Text="0" FontFamily="Press Start 2P" Foreground="#B6FF00" FontSize="60" Margin="0,10,0,15"/>
+
+                <Grid Margin="0,0,0,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="УБИЙСТВА" FontFamily="Press Start 2P" Foreground="#AAAAAA" FontSize="16"/>
+                        <TextBlock x:Name="TxtKills" Text="0" FontFamily="Press Start 2P" Foreground="White" FontSize="24" Margin="0,30,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="ВРЕМЯ" FontFamily="Press Start 2P" Foreground="#AAAAAA" FontSize="16"/>
+                        <TextBlock x:Name="TxtTime" Text="00:00" FontFamily="Press Start 2P" Foreground="White" FontSize="24" Margin="0,30,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="МЕСТО В&#x0a;ТАБЛИЦЕ" FontFamily="Press Start 2P" Foreground="#AAAAAA" FontSize="16" LineHeight="20"/>
+                        <TextBlock x:Name="TxtRank" Text="#000" FontFamily="Press Start 2P" Foreground="White" FontSize="24" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="BtnRestart" Grid.Column="0" Content="ЕЩЕ РАЗ?" FontFamily="Press Start 2P" FontSize="20" Background="#00E5FF" Foreground="Black" BorderThickness="0" Padding="10" Margin="0,0,10,0" Click="BtnRestart_Click"/>
+                    <Button x:Name="BtnMenu" Grid.Column="1" Content="В ГЛАВНОЕ МЕНЮ" FontFamily="Press Start 2P" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="#555555" BorderThickness="2" Padding="10" Margin="10,0,0,0" Click="BtnMenu_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Text="THE VOID DOESN'T&#x0a;KEEP YOUR&#x0a;EXCUSES (AND YOUR&#x0a;MOOD)" 
+                   FontFamily="Cyberpunk" Foreground="#00FFFF" FontSize="24" 
+                   TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                   Margin="0,0,80,50" TextAlignment="Left"/>
+    </Grid>
+</Window>

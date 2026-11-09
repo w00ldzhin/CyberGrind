@@ -5,8 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:igraUP.Views"
         mc:Ignorable="d"
-        Title="LeaderBoardWindow" Height="450" Width="800">
-    <Grid>
-        
+                Title="Таблица лидеров" 
+        WindowStyle="None" 
+        WindowState="Maximized" 
+        Background="#8A2BE2" 
+      >
+
+       <Grid>
+        <TextBlock Text="VOID//RUN" FontFamily="Cyberpunk" Foreground="#B6FF00" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,80,0,0">
+            <TextBlock Text="ГЛОБАЛЬНЫЕ РЕКОРДЫ | СЕЗОН  I" FontFamily="Cyberpunk" Foreground="White" FontSize="20" />
+            <TextBlock Text="ТАБЛИЦА" FontFamily="Cyberpunk" Foreground="White" FontSize="100" Margin="0,20,0,0"/>
+            <TextBlock Text="Позора" FontFamily="Cyberpunk" Foreground="White" FontSize="100"  Margin="0,-30,0,20"/>
+            <TextBlock Text="КТО МЕНЬШЕ ВСЕХ&#x0a;ПОЗОРИЛСЯ - ТОТ&#x0a;СВЕРХУ" FontFamily="Cyberpunk" Foreground="White" FontSize="24"  Margin="0,20,0,0" LineHeight="25"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,0,0,50">
+            <Button Content="В МЕНЮ" FontFamily="Press Start 2P" FontSize="24" Background="#000000" Foreground="White" BorderThickness="0" Padding="20,10" Click="BtnBack_Click"/>
+            <TextBlock Text="Не верь результатам" FontFamily="Cyberpunk" FontSize="24" Foreground="White" Margin="0,20,0,0"/>
+        </StackPanel>
+
+        <Border HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,100,0" 
+                Background="#0A0A0A" BorderBrush="#B6FF00" BorderThickness="2" 
+                Width="800" Height="600" Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="ЛУЧШИЕ ЗАБЕГИ" FontFamily="Cyberpunk" FontSize="30" Foreground="#B6FF00" Margin="0,0,0,20"/>
+
+                <ListView Grid.Row="1" x:Name="LstScores" Background="Transparent" BorderThickness="0" Foreground="White">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Margin" Value="0,0,0,10"/>
+                            <Setter Property="FontFamily" Value="Press Start 2P"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#3300FF00"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="#" DisplayMemberBinding="{Binding Rank}" Width="60"/>
+                            <GridViewColumn Header="ИГРОК" DisplayMemberBinding="{Binding Username}" Width="250"/>
+                            <GridViewColumn Header="СЧЕТ" DisplayMemberBinding="{Binding Points}" Width="200"/>
+                            <GridViewColumn Header="ВРЕМЯ" DisplayMemberBinding="{Binding Time}" Width="150"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

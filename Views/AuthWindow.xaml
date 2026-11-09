@@ -11,7 +11,7 @@
 Height="720"
 MinWidth="1280"
 MinHeight="720"
-WindowStartupLocation="CenterScreen" Background="#A8D900">
+WindowStyle="None" WindowState="Maximized" Background="#A8D900">
 
     <Grid>
         <Grid>
@@ -131,13 +131,13 @@ WindowStartupLocation="CenterScreen" Background="#A8D900">
                     <TextBlock x:Name="PassNotes"
                            FontFamily="Press Start 2P"
                            FontSize="16"
-                           Foreground="#FF0013"
+                           Foreground="#D900C7"
                            TextWrapping="Wrap"
                            HorizontalAlignment="Center"
                            Margin="0,0,0,15"/>
 
                     <Button Content="ВОЙТИ"
-                        FontFamily="Cyberpunk"
+                        FontFamily="Press Start 2P"
                         FontSize="18"
                         Background="#9B00FF"
                         Foreground="#000000"
@@ -148,7 +148,7 @@ WindowStartupLocation="CenterScreen" Background="#A8D900">
                         Click="Login_Click"/>
 
                     <Button Content="ЗАРЕГИСТРИРОВАТЬСЯ"
-                        FontFamily="Cyberpunk"
+                        FontFamily="Press Start 2P"
                         FontSize="18"
                         Background="#9B00FF"
                         Foreground="#000000"

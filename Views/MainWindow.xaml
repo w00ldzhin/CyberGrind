@@ -5,7 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:igraUP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="VOID//RUN" Height="720" Width="1280" WindowStyle="None" WindowState="Maximized" Background="#000000" ResizeMode="NoResize">
+
     <Grid>
+        <TextBlock Text="VOID//RUN" FontFamily="Cyberpunk" Foreground="#B6FF00" FontSize="20" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0"/>
+
+        <Button x:Name="BtnExit" Content="ВЫХОД" FontFamily="Press Start 2P" FontSize="18" 
+                Background="Transparent" Foreground="#FF0000" BorderBrush="#FF0000" BorderThickness="2" 
+                Padding="15,5" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,50,0" 
+                Click="BtnExit_Click"/>
+       
+
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0" Width="650">
+            <TextBlock Text="Would you rather live in peace as Mr. Nobody, die ripe, old and smelling slightly of urine? Or go down for all times in a blaze of glory, smelling near like posies, without seeing your thirtieth?" 
+                       FontFamily="Cyberpunk" Foreground="#FF5F5F5F" FontSize="28" TextWrapping="Wrap" 
+                       Margin="0,80,0,0" LineHeight="35"/>
+
+            <StackPanel>
+                <TextBlock Text="A SHORT, VIOLENT DESCENT" FontFamily="Cyberpunk" Foreground="#FF00FF" FontSize="20"/>
+
+                <TextBlock Text="PSYCHO\" FontFamily="Cyberpunk" Foreground="#B6FF00" FontSize="110" Margin="0,10,0,-30"/>
+                <TextBlock Text="\GRIND" FontFamily="Cyberpunk" Foreground="#B6FF00" FontSize="90" Margin="0,0,0,0"/>
+
+                <TextBlock Text="ONE LIFE. ONE RUN. KEEP MOVING." FontFamily="Cyberpunk" Foreground="White" FontSize="18" Margin="0,100,0,0"/>
+
+                <StackPanel Margin="0,230,0,0" MinHeight="188">
+                    <Button x:Name="BtnStart" Content="Начать забег" FontFamily="Press Start 2P" FontSize="28" Background="#B6FF00" Foreground="Black" Padding="20,10" HorizontalAlignment="Left" Margin="0,0,0,15" Click="BtnStart_Click"/>
+                    <Button x:Name="BtnLeaderboard" Content="Таблица лидеров" FontFamily="Press Start 2P" FontSize="24" Background="Transparent" Foreground="White" BorderBrush="White" BorderThickness="2" Padding="15,8" HorizontalAlignment="Left" Click="BtnLeaderboard_Click"/>
+                    <Button x:Name="BtnInfo" Content="О разработчике" FontFamily="Press Start 2P" FontSize="24" Background="Transparent" Foreground="White" BorderBrush="White" BorderThickness="2" Padding="15,8" Margin="0,15,0,0" HorizontalAlignment="Left" Click="BtnInfo_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,80,50,0" 
+                Background="#111116"  BorderThickness="2" Padding="40" Width="500">
+            <TextBlock Text="FAST IS WHAT YOU DO BEST, AIN'T IT?&#x0a;JUST KEEP RUNNING" 
+                       FontFamily="Cyberpunk" Foreground="#FFFFFF" FontSize="36" TextWrapping="Wrap" LineHeight="45"/>
+        </Border>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50,100,0,50">
+            <TextBlock Text="ЭКСПЕРИМЕНТ:" FontFamily="Cyberpunk" Foreground="#AAAAAA" FontSize="16"/>
+            <TextBlock x:Name="TxtCurrentUser" Text="_CURRENT_USER" FontFamily="Cyberpunk" Foreground="#B6FF00" FontSize="20" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <TextBlock Text="WAKE THE FLIP UP, SAMURAI. WE&#x0a;HAVE A CITY TO BURN" 
+                   FontFamily="Cyberpunk" Foreground="White" FontSize="18" TextWrapping="Wrap" 
+                   HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,50" TextAlignment="Right"/>
     </Grid>
 </Window>

@@ -1,18 +1,22 @@
 ﻿
 using System.Text;
 using System.Security.Cryptography;
-using igraUP.Data;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Windows.Documents;
 using System.Windows;
+using System.ComponentModel;
+using igraUP.Models;
 
 namespace igraUP.Service
 {
     public  static class AuthService
     {
-       public static bool Register(string login, string password, out string regerror)
+
+
+
+        public static bool Register(string login, string password, out string regerror)
         {
             try
             {
@@ -55,7 +59,7 @@ namespace igraUP.Service
 
                     SaveService.SaveUsers(users);
 
-                    regerror = string.Empty;
+                    regerror = "Успешная регистрация";
                     return true;
                 }
 
@@ -66,7 +70,6 @@ namespace igraUP.Service
                 return false;
             } 
         }
-
         public static bool Login(string login, string password, out string loginerror)
         {
             try
@@ -113,6 +116,13 @@ namespace igraUP.Service
                 loginerror = "Ошибка при входе в систему";
                 return false;
             }
+        }
+
+        public static string GetCurrentUser(string login, out string currentuser)
+        {
+
+
+            return currentuser = login;
         }
     }
 }
